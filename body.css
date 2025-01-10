@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000; /* Latar belakang hitam */
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; /* Untuk mencegah scroll akibat animasi balon */
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #ffeb3b; /* Warna teks kuning */
+    z-index: 10;
+    position: relative;
+}
+
+/* Gaya balon */
+.balloons {
+    width: 50px;
+    height: 70px;
+    position: absolute;
+    bottom: -100px;
+    background-color: red;
+    border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+    animation: rise 8s infinite;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+/* Warna balon acak */
+.balloons:nth-child(2) {
+    background-color: blue;
+    animation-duration: 7s;
+}
+.balloons:nth-child(3) {
+    background-color: green;
+    animation-duration: 6s;
+}
+.balloons:nth-child(4) {
+    background-color: yellow;
+    animation-duration: 9s;
+}
+.balloons:nth-child(5) {
+    background-color: pink;
+    animation-duration: 7.5s;
+}
